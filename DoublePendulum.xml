@@ -1,0 +1,1225 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.3" password="">
+<Osejs.Information>
+<Title><![CDATA[Double Pendulum]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[advanced]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[Final project for Physics 200.]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<RunAlways>true</RunAlways>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFile></CSSFile>
+<StaticImages>
+</StaticImages>
+<HTMLHead><![CDATA[]]></HTMLHead>
+<Logo></Logo>
+<Author><![CDATA[Dan Hampton and Wolfgang Christian]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./DoublePendulum/DoublePendulum.html;./DoublePendulum/double_pendulum_diagram.jpg;./DoublePendulum/double_pendulum_map.jpg;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./DoublePendulum/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Double Pendulum</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Double Pendulum</Title>
+  <External>true</External>
+  <![CDATA[
+./DoublePendulum/DoublePendulum.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>spd</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Drawing Vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[x position of first pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[y position of first pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[x position of second pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[y position of second pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m1]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[mass of first pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m2]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[mass of second pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[colorIndex]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[color of points on poincare map]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta1max]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[scaling parameter for poincare map]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omega1max]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[scaling parameter for poincare map]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[arrowScale]]></Name>
+<Value><![CDATA[0.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>ODE vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[Theta1]]></Name>
+<Value><![CDATA[.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[angle of first pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Theta2]]></Name>
+<Value><![CDATA[.2*Math.sqrt(2)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[angle of second pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Omega1]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[angular velocity of first pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Omega2]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[angular velocity of second pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Constants</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[L1]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[Length of first pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L2]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[Length of second pendulum]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[g]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[gravity]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Parameters</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[E]]></Name>
+<Value><![CDATA[10.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[total energy]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[E0]]></Name>
+<Value><![CDATA[E]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spd]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[speed of simulation]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[time step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tol]]></Name>
+<Value><![CDATA[1.0e-12]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[ODE solver tolerance]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>View Vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[initialCondition]]></Name>
+<Value><![CDATA["User defined"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[used in dropdown menu]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showPoincare]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showPhaseSpace]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showAngles]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showThetaOmega]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+energyAction();//computes omega2 and scales poincare map
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+//This calculates alpha 1 and alpha 2
+
+double mew=m2/(m1+m2);
+double lambda=L1/L2;
+double term1=1/(1-mew*Math.cos(Theta2-Theta1)*Math.cos(Theta2-Theta1));
+
+double alpha1=term1*(mew*g/L1*Math.sin(Theta2)*Math.cos(Theta2-Theta1)+mew*Omega1*Omega1*Math.sin(Theta2-Theta1)*Math.cos(Theta2-Theta1)-g/L1*Math.sin(Theta1)+mew/lambda*Omega2*Omega2*Math.sin(Theta2-Theta1));
+
+double alpha2=term1*(g/L2*Math.sin(Theta1)*Math.cos(Theta2-Theta1)-mew*Omega2*Omega2*Math.sin(Theta2-Theta1)*Math.cos(Theta2-Theta1)-g/L2*Math.sin(Theta2)-lambda*Omega1*Omega1*Math.sin(Theta2-Theta1));
+
+//alternative expressions not used:(-g*(2*m1+m2)*Math.sin(Theta1)-m2*g*Math.sin(Theta1-2*Theta2)-2*Math.sin(Theta1-Theta2)*m2*(Omega2*Omega2*L2+Omega1*Omega1*L1*Math.cos(Theta1-Theta2)))/(L1*(2*m1+m2-m2*Math.cos(2*Theta1-2*Theta2)));
+//alternative expressions not used:(2*Math.sin(Theta1-Theta2)*(Omega1*Omega1*L1*(m1+m2)+g*(m1+m2)*Math.cos(Theta1)+Omega2*Omega2*L2*m2*Math.cos(Theta1-Theta2)))/(L2*(2*m1+m2-m2*Math.cos(2*Theta1-2*Theta2)));
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<Events>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Theta2 Event</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<EventContent>
+<EventType>CROSSING_EVENT</EventType>
+<Method>SECANT</Method>
+<Iterations>100</Iterations>
+<Tolerance><![CDATA[tol]]></Tolerance>
+<StopAtEvent>false</StopAtEvent>
+<ZeroCondition><![CDATA[
+//plots point when pendulum goes through theta2=0
+return Theta2;
+]]></ZeroCondition>
+<Action><![CDATA[
+if(Omega2+L1/L2*Omega1*Math.cos(Theta1)>0) {
+  if(Theta1>Math.PI) {//keeps angles between -pi and pi
+    Theta1 -= 2*Math.PI;
+  } else if(Theta1<-Math.PI) {//keeps angles between -pi and pi
+    Theta1 += 2*Math.PI;
+  }
+  _view.poincareTrail.addPoint(Theta1,Omega1);//adds points to Poincare map
+  _view.dataRaster.append(colorIndex,Theta1,Omega1);
+}
+]]></Action>
+<Comment><![CDATA[]]></Comment>
+</EventContent>
+</Event.Page>
+</Events>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="Theta1">Omega1</Rate>
+<Rate state="Omega1">alpha1</Rate>
+<Rate state="Theta2">Omega2</Rate>
+<Rate state="Omega2">alpha2</Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>tol</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Update drawing vars</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+x1=L1*Math.sin(Theta1);//calculates rectangular coordinates of objects
+y1=-L1*Math.cos(Theta1);
+x2=x1+L2*Math.sin(Theta2);
+y2=y1-L2*Math.cos(Theta2);
+
+if(Theta1>Math.PI){//keeps angles between -pi and pi
+  Theta1 -= 2*Math.PI;
+}else if(Theta1<-Math.PI){//keeps angles between -pi and pi
+  Theta1 += 2*Math.PI;
+}
+
+if(Theta2>Math.PI){//keeps angles between -pi and pi
+  Theta2 -= 2*Math.PI;
+}else if(Theta2<-Math.PI){//keeps angles between -pi and pi
+  Theta2 += 2*Math.PI;
+}
+
+//computes energy
+E=.5*2*Omega1*Omega1+.5*Omega2*Omega2+Omega1*Omega2*Math.cos(Theta2-Theta1)+2*g*(1-Math.cos(Theta1))+g*(1-Math.cos(Theta2));//KE+PE+29.43;//Total Energy
+arrowScale=1.0/(2.0+Math.sqrt(E));
+  
+  
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Poincare Action</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void poincarePanelAction() {
+  double x =_view.poincarePlottingPanel.getMouseX();
+  double y =_view.poincarePlottingPanel.getMouseY();
+  if(!checkValues(x,y,E0)) return;
+  if(t!=0){
+    colorIndex++; // change the color only if data has already been collected.
+  }
+  E=E0;  // remove energy drift
+  Theta1=x;
+  Omega1=y;
+  Theta2=0;
+  Omega2=-Omega1*Math.cos(Theta1)+Math.sqrt(2*E-4*g-2*Omega1*Omega1+4*g*Math.cos(Theta1)+Omega1*Omega1*Math.cos(Theta1)*Math.cos(Theta1));
+  t=0;
+  E0=E=.5*2*Omega1*Omega1+.5*Omega2*Omega2+Omega1*Omega2*Math.cos(Theta2-Theta1)+2*g*(1-Math.cos(Theta1))+g*(1-Math.cos(Theta2));
+  clearTrails();
+  _view.poincareTrail.addPoint(Theta1,Omega1);
+  _view.dataRaster.append(colorIndex,Theta1,Omega1);
+}
+
+public boolean checkValues(double Theta1, double Omega1, double E){
+  return 2*E-4*g-2*Omega1*Omega1+4*g*Math.cos(Theta1)+Omega1*Omega1*Math.cos(Theta1)*Math.cos(Theta1)>=0;
+}
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Action Methods</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void energyAction () {
+  Theta2=0;
+  Theta1=0;
+  Omega1=0;
+  Omega2=Math.sqrt(2*E);
+  t=0;
+  _view.clearData();
+  computePoincareScale () ;
+}
+
+public void dragAction(){
+  _view.clearData();
+  t=0;
+  E=.5*2*Omega1*Omega1+.5*Omega2*Omega2+Omega1*Omega2*Math.cos(Theta2-Theta1)+2*g*(1-Math.cos(Theta1))+g*(1-Math.cos(Theta2));//KE+PE+29.43;//Total Energy
+  computePoincareScale();
+}
+
+public void computePoincareScale() {
+  theta1max=Math.acos((-E+g*L1*(m1+m2))/(g*(m1+m2)));
+  omega1max=Math.sqrt(2*E);
+  double omegaStart=0;
+  if(E>4*g) {
+    theta1max=Math.PI;
+    omegaStart=Math.sqrt(2*E-8*g);
+  }
+  _view.upperBoundaryTrail.clear();
+  _view.lowerBoundaryTrail.clear();
+  int n=200;
+  double theta=-theta1max, dtheta=2*theta1max/(n+1);
+  double omega=omegaStart;
+  for(int i=0; i<n; i++){
+    _view.upperBoundaryTrail.addPoint(theta,omega);
+    _view.lowerBoundaryTrail.addPoint(theta,-omega);
+    theta+=dtheta;
+    double cos=Math.cos(theta);
+    omega=Math.sqrt((2*E+4*g*(cos-1))/(2-cos*cos));
+  }
+  _view.upperBoundaryTrail.addPoint(theta1max,omegaStart);
+  _view.lowerBoundaryTrail.addPoint(theta1max,-omegaStart);
+}
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Clear Trails</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void clearTrails() {
+  t=0;
+  _view.poincareTrail.clear();
+  _view.thetaOmegaOne.clear();
+  _view.thetaOmegaTwo.clear();
+  _view.phaseSpaceTrail.clear();
+  _view.thetaOneTrail.clear();
+  _view.thetaTwoTrail.clear();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>SelectEnergy</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void selectEnergy() {
+  _view.clearData();
+  if(initialCondition.equals("Mode 1")) {
+    Theta1=0.131;
+    Theta2=0.187;
+    Omega1=0.358;
+    Omega2=0.509;
+    E0=E=0.781;
+    dt=0.1;
+    computePoincareScale();
+  } else if(initialCondition.equals("Mode 2")) {
+    Theta1=0.201;
+    Theta2=-0.281;
+    Omega1=-0.0520;
+    Omega2=0.0717;
+    E0=E=0.781;
+    dt=0.1;
+    computePoincareScale();
+  } else if(initialCondition.equals("High energy")) {
+    Theta1=-0.353;
+    Theta2=2.189;
+    Omega1=34.28;
+    Omega2=120.0;
+    E0=E=5000.0;
+    dt=0.0025;
+    computePoincareScale();
+  }else{
+    energyAction();
+  }
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">pendulumDrawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Double Pendulum"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["1181,318"]]></Property>
+<Property name="size"><![CDATA["580,482"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">pendulumDrawingPanel</Property>
+<Property name="parent">pendulumDrawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[-2.4]]></Property>
+<Property name="maximumX"><![CDATA[2.4]]></Property>
+<Property name="minimumY"><![CDATA[-2.4]]></Property>
+<Property name="maximumY"><![CDATA[2.4]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">topArm</Property>
+<Property name="parent">pendulumDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[x1]]></Property>
+<Property name="sizeY"><![CDATA[y1]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">bottomArm</Property>
+<Property name="parent">pendulumDrawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[x2-x1]]></Property>
+<Property name="sizeY"><![CDATA[y2-y1]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">pivot</Property>
+<Property name="parent">pendulumDrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[.2]]></Property>
+<Property name="sizeY"><![CDATA[.1]]></Property>
+<Property name="style"><![CDATA[ROUND_RECTANGLE]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">topMass</Property>
+<Property name="parent">pendulumDrawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[0.15]]></Property>
+<Property name="sizeY"><![CDATA[0.15]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="dragAction"><![CDATA[Theta1=Math.atan2(x1,-y1);
+dragAction();]]></Property>
+<Property name="releaseAction"><![CDATA[colorIndex++;
+clearTrails();]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">v1Arrow</Property>
+<Property name="parent">pendulumDrawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[Omega1*Math.cos(Theta1)]]></Property>
+<Property name="sizeY"><![CDATA[Omega1*Math.sin(Theta1)]]></Property>
+<Property name="scalex"><![CDATA[arrowScale]]></Property>
+<Property name="scaley"><![CDATA[arrowScale]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="fillColor"><![CDATA[PINK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">bottomMass</Property>
+<Property name="parent">pendulumDrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizeX"><![CDATA[0.15]]></Property>
+<Property name="sizeY"><![CDATA[0.15]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="dragAction"><![CDATA[Theta2=Math.atan2((x2-x1),-(y2-y1));
+dragAction();]]></Property>
+<Property name="releaseAction"><![CDATA[colorIndex++;
+clearTrails();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">v1Arrow2</Property>
+<Property name="parent">pendulumDrawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizeX"><![CDATA[Omega2*Math.cos(Theta2)]]></Property>
+<Property name="sizeY"><![CDATA[Omega2*Math.sin(Theta2)]]></Property>
+<Property name="scalex"><![CDATA[arrowScale]]></Property>
+<Property name="scaley"><![CDATA[arrowScale]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="fillColor"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">pendulumDrawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,3,0,0]]></Property>
+<Property name="size"><![CDATA["120,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["Starts and stops the simulation."]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/step.gif]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["Setp the simulation"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset();]]></Property>
+<Property name="tooltip"><![CDATA["Reset the simulation"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">fastCheck</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["fast"]]></Property>
+<Property name="actionon"><![CDATA[spd=100;]]></Property>
+<Property name="actionoff"><![CDATA[spd=1;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">checkPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[FLOW:left,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">plotLabel</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="text"><![CDATA["  Plot:"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showPoincare</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[showPoincare]]></Property>
+<Property name="text"><![CDATA["Poincare"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showPhaseSpace</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="variable"><![CDATA[showPhaseSpace]]></Property>
+<Property name="text"><![CDATA["phase space"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showAngles</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="variable"><![CDATA[showAngles]]></Property>
+<Property name="text"><![CDATA["angles"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showThetaOmega</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="variable"><![CDATA[showThetaOmega]]></Property>
+<Property name="text"><![CDATA["theta-omega"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">topPanel</Property>
+<Property name="parent">pendulumDrawingFrame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[BORDER:10,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">varsPanel</Property>
+<Property name="parent">topPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[FLOW:left,10,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">thetaOnePanel</Property>
+<Property name="parent">varsPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">thetaOneLabel</Property>
+<Property name="parent">thetaOnePanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["$\\theta$1 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">thetaOneField</Property>
+<Property name="parent">thetaOnePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[Theta1]]></Property>
+<Property name="action"><![CDATA[_view.comboBox.setSelectedIndex(0);]]></Property>
+<Property name="size"><![CDATA["45,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">thetaTwoPanel</Property>
+<Property name="parent">varsPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">theta2Label</Property>
+<Property name="parent">thetaTwoPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["$\\theta$2 = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">thetaTwoField</Property>
+<Property name="parent">thetaTwoPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[Theta2]]></Property>
+<Property name="action"><![CDATA[_view.comboBox.setSelectedIndex(0);]]></Property>
+<Property name="size"><![CDATA["45,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">energyPanel</Property>
+<Property name="parent">varsPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">energyLabel</Property>
+<Property name="parent">energyPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["E = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">energyField</Property>
+<Property name="parent">energyPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[E]]></Property>
+<Property name="format"><![CDATA["0.00000"]]></Property>
+<Property name="editable"><![CDATA[_isPaused]]></Property>
+<Property name="action"><![CDATA[E=Math.max(0,E);
+E=Math.min(E,500);
+E0=E;
+energyAction();
+initialCondition="User defined";
+_view.comboBox.setSelectedIndex(0);]]></Property>
+<Property name="size"><![CDATA["65,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">tPanel</Property>
+<Property name="parent">varsPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">tLabel</Property>
+<Property name="parent">tPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["t = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">tField</Property>
+<Property name="parent">tPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+<Property name="format"><![CDATA["0.000"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA["50,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">dtPanel</Property>
+<Property name="parent">varsPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">dtLabel</Property>
+<Property name="parent">dtPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["dt = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">dtField</Property>
+<Property name="parent">dtPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[dt]]></Property>
+<Property name="format"><![CDATA["0.000"]]></Property>
+<Property name="size"><![CDATA["45,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ComboBox</Type>
+<Property name="name">comboBox</Property>
+<Property name="parent">topPanel</Property>
+<Property name="position">east</Property>
+<Property name="options"><![CDATA["User defined;Mode 1;Mode 2;High energy"]]></Property>
+<Property name="variable"><![CDATA[%initialCondition%]]></Property>
+<Property name="value"><![CDATA["User defined"]]></Property>
+<Property name="action"><![CDATA[boolean run =_isPlaying();
+_pause();
+selectEnergy();
+if(run)_play();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">poincareFrame</Property>
+<Property name="title"><![CDATA["Poincare Section"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showPoincare]]></Property>
+<Property name="location"><![CDATA["1328,527"]]></Property>
+<Property name="size"><![CDATA["580,472"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">poincarePlottingPanel</Property>
+<Property name="parent">poincareFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="square"><![CDATA[false]]></Property>
+<Property name="pressaction"><![CDATA[poincarePanelAction();]]></Property>
+<Property name="titleX"><![CDATA["$\\theta$_{1} (rad)"]]></Property>
+<Property name="titleY"><![CDATA["$\\omega$_{1} (rad/s)"]]></Property>
+<Property name="xFormat"><![CDATA["$\\theta$=0.00"]]></Property>
+<Property name="yFormat"><![CDATA["$\\omega$=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">poincareTrail</Property>
+<Property name="parent">poincarePlottingPanel</Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="maximumPoints"><![CDATA[500]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[colorIndex]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.DataRaster</Type>
+<Property name="name">dataRaster</Property>
+<Property name="parent">poincarePlottingPanel</Property>
+<Property name="index"><![CDATA[colorIndex]]></Property>
+<Property name="minimumX"><![CDATA[-theta1max]]></Property>
+<Property name="maximumX"><![CDATA[theta1max]]></Property>
+<Property name="minimumY"><![CDATA[-omega1max]]></Property>
+<Property name="maximumY"><![CDATA[omega1max]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">upperBoundaryTrail</Property>
+<Property name="parent">poincarePlottingPanel</Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">lowerBoundaryTrail</Property>
+<Property name="parent">poincarePlottingPanel</Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">thetaOmegaFrame</Property>
+<Property name="title"><![CDATA["Theta vs. Omega"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showThetaOmega]]></Property>
+<Property name="location"><![CDATA["727,1"]]></Property>
+<Property name="size"><![CDATA["300,300"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">thetaOmegaPlottingPanel</Property>
+<Property name="parent">thetaOmegaFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[-Math.PI]]></Property>
+<Property name="maximumX"><![CDATA[Math.PI]]></Property>
+<Property name="minimumY"><![CDATA[-0.5]]></Property>
+<Property name="maximumY"><![CDATA[0.5]]></Property>
+<Property name="titleX"><![CDATA["$\\theta$1 (Rad)"]]></Property>
+<Property name="titleY"><![CDATA["$\\omega$1 (Rad/Sec)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">thetaOmegaOne</Property>
+<Property name="parent">thetaOmegaPlottingPanel</Property>
+<Property name="inputX"><![CDATA[Theta1]]></Property>
+<Property name="inputY"><![CDATA[Omega1]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="maximumPoints"><![CDATA[1000]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">thetaOmegaTwo</Property>
+<Property name="parent">thetaOmegaPlottingPanel</Property>
+<Property name="inputX"><![CDATA[Theta2]]></Property>
+<Property name="inputY"><![CDATA[Omega2]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="maximumPoints"><![CDATA[1000]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">phaseSpaceFrame</Property>
+<Property name="title"><![CDATA["Phase Space"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showPhaseSpace]]></Property>
+<Property name="location"><![CDATA["722,216"]]></Property>
+<Property name="size"><![CDATA["300,300"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">phaseSpaceDrawingPanel</Property>
+<Property name="parent">phaseSpaceFrame</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-3.1415]]></Property>
+<Property name="maximumX"><![CDATA[3.1415]]></Property>
+<Property name="minimumY"><![CDATA[-6]]></Property>
+<Property name="maximumY"><![CDATA[6]]></Property>
+<Property name="minimumZ"><![CDATA[-6]]></Property>
+<Property name="maximumZ"><![CDATA[6]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-3.819999999999998]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.39500000000000024]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[30.0]]></Property>
+<Property name="removeHiddenLines"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">phaseSpaceTrail</Property>
+<Property name="parent">phaseSpaceDrawingPanel</Property>
+<Property name="inputX"><![CDATA[Theta1]]></Property>
+<Property name="inputY"><![CDATA[Omega1]]></Property>
+<Property name="inputZ"><![CDATA[Theta2]]></Property>
+<Property name="maximumPoints"><![CDATA[3000]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Plane3D</Type>
+<Property name="name">poincarePlane</Property>
+<Property name="parent">phaseSpaceDrawingPanel</Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[10]]></Property>
+<Property name="sizeY"><![CDATA[10]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="fillColor"><![CDATA[255,175,175,70]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">angleFrame</Property>
+<Property name="title"><![CDATA["Pendulum Angles"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showAngles]]></Property>
+<Property name="location"><![CDATA["848,617"]]></Property>
+<Property name="size"><![CDATA["300,300"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">anglePlottingPanel</Property>
+<Property name="parent">angleFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="titleX"><![CDATA["Time (s)"]]></Property>
+<Property name="titleY"><![CDATA["Amplitude (rad)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">thetaOneTrail</Property>
+<Property name="parent">anglePlottingPanel</Property>
+<Property name="inputX"><![CDATA[t]]></Property>
+<Property name="inputY"><![CDATA[Theta1]]></Property>
+<Property name="maximumPoints"><![CDATA[100]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">thetaTwoTrail</Property>
+<Property name="parent">anglePlottingPanel</Property>
+<Property name="inputX"><![CDATA[t]]></Property>
+<Property name="inputY"><![CDATA[Theta2]]></Property>
+<Property name="maximumPoints"><![CDATA[100]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>
